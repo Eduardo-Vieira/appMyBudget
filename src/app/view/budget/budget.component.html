@@ -1,0 +1,22 @@
+<div class="page">
+    
+    <div class="page-title">Orçamentos</div>
+
+    <div class="form-input">
+        <button (click)="addItem()"><fa-icon [icon]="iPlus"></fa-icon> Novo registro</button>
+    </div>
+    
+    <div class="list">
+        @for (item of items; track $index) {
+            <div class="list-item">{{item.clientName}}
+                <div class="action-group">
+                    <div class="action-item" (click)="detailItem(item.id)"><fa-icon [icon]="iDetail"></fa-icon></div>
+                    <div class="action-item" (click)="editItem($index)"><fa-icon [icon]="iEdit"></fa-icon></div>
+                    <div class="action-item" (click)="removeItem($index)"><fa-icon [icon]="iRemove"></fa-icon></div>                    
+                </div>
+            </div>
+        } @empty {
+            <div class="list-item-empty">Lista sem itens</div>
+        }
+    </div>
+</div>

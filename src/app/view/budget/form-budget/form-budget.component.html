@@ -1,0 +1,15 @@
+<div class="page">
+    
+    <div class="page-title">Novo Orçamentos</div>
+
+    <div class="form-input">
+            <label>Cliente Name: </label>
+            <select [(ngModel)]="formBudget.clientName">
+                @for (item of clients; track $index) {
+                <option [value]="item">{{item}}</option>
+                }
+            </select>
+            <button (click)="save()">Salvar</button>
+    </div>
+
+</div>

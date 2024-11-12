@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "thema";
+
+html, body {
+    margin: 0px;
+    height: 95%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: solid 2px #dcdcdc;;
+}
+
+button {
+    border: solid 1px $base-color;
+    background-color: $base-color;
+    color: $button-text-color;
+    margin-left: 4px;
+    border-radius: 4px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+button:active { 
+    background-color: $base-color-active;
+}
+
+input,select:focus {
+    outline: none;
+    border: solid 1.5px $base-color;
+}
+input {
+    border: solid 1px $base-color;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 4px;
+}
+select {
+    border: solid 1px $base-color;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 4px;
+}

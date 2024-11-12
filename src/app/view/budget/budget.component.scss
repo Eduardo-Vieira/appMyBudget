@@ -1,0 +1,42 @@
+@import "../../../thema.scss";
+
+.form-input {
+    margin-bottom: 8px;
+    padding: 16px;
+    background-color: #dbdada;
+    input {
+        width: 30%;
+    }
+    .input-label {
+        font-weight: 500;
+        padding-bottom: 8px;
+    }
+}
+.list {
+    .list-item {
+        background-color: $base-color-opacify;
+        padding: 8px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        color: $text-color;
+        .action-group {
+            float: right;
+            .action-item {
+                float: left;
+                margin-left: 8px;
+                transition: .5s;
+                transform: scale(.9);
+                cursor: pointer;
+            }
+            .action-item:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .list-item-empty {
+        text-align: center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        color: $text-color;
+    }
+}

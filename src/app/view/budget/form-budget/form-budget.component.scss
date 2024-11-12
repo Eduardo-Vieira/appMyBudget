@@ -1,0 +1,14 @@
+@import "../../../../thema.scss";
+
+.form-input {
+    margin-bottom: 8px;
+    padding: 16px;
+    background-color: #dbdada;
+    select {
+        width: 30%;
+    }
+    .input-label {
+        font-weight: 500;
+        padding-bottom: 8px;
+    }
+}

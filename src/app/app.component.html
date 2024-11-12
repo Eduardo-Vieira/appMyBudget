@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<div class="menu">
+    @for (m of menu; track $index) {
+        <div [className]="m.class" (click)="navigation($index, m.url)"><fa-icon [icon]="m.icon"></fa-icon> {{m.name}}</div>
+    }
+</div>
+
+<div class="nav-outlet">
+    <router-outlet />
+</div>
