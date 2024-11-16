@@ -1,6 +1,7 @@
 @import "../../../thema.scss";
 
-.header {
+:host {
+    display: block;
     height: 52px;
     background-color: #f5f5f5;
     box-shadow: 0px 5px 5px #dcdcdc;

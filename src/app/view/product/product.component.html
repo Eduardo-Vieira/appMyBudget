@@ -1,28 +1,25 @@
-<div class="page">
-    
-    <div class="page-title">Produtos</div>
+<div class="page-title">Produtos</div>
 
-    <div class="form-input">
-        <div class="input-label">Nome do Produto:</div>
-        <input [(ngModel)]="inputName"/>
-        @if (isEdit) {
-            <button (click)="updateItem()">Atualizar</button>
-            <button (click)="cancel()">Cancelar</button>    
-        } @else {
-            <button (click)="addItem()">Incluir</button>
-        }
+<div class="form-input">
+    <div class="input-label">Nome do Produto:</div>
+    <input [(ngModel)]="inputName" />
+    @if (isEdit) {
+    <button (click)="updateItem()">Atualizar</button>
+    <button (click)="cancel()">Cancelar</button>
+    } @else {
+    <button (click)="addItem()">Incluir</button>
+    }
+</div>
+
+<div class="list">
+    @for (item of items; track $index) {
+    <div class="list-item">{{item}}
+        <div class="action-group">
+            <div class="action-item" (click)="editItem($index)"><fa-icon [icon]="iEdit"></fa-icon></div>
+            <div class="action-item" (click)="removeItem($index)"><fa-icon [icon]="iRemove"></fa-icon></div>
+        </div>
     </div>
-    
-    <div class="list">
-        @for (item of items; track $index) {
-            <div class="list-item">{{item}}
-                <div class="action-group">
-                    <div class="action-item" (click)="editItem($index)"><fa-icon [icon]="iEdit"></fa-icon></div>
-                    <div class="action-item" (click)="removeItem($index)"><fa-icon [icon]="iRemove"></fa-icon></div>                    
-                </div>
-            </div>
-        } @empty {
-            <div class="list-item-empty">Lista sem itens</div>
-        }
-    </div>
+    } @empty {
+    <div class="list-item-empty">Lista sem itens</div>
+    }
 </div>

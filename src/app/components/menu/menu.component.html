@@ -1,0 +1,5 @@
+@for (m of data; track $index) {
+    <div class="menu-item" [class.active]="m.active" (click)="navigation($index, m.url)">
+        <fa-icon [icon]="m.icon"></fa-icon> {{m.name}}
+    </div>
+}

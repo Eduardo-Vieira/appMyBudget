@@ -1,63 +1,60 @@
-<div class="page">
+<div class="page-title">Orçamentos</div>
 
-    <div class="page-title">Orçamentos</div>
+<p>{{budgetModel.id}}#</p>
+<p><b>Data:</b> {{budgetModel.date | date : 'dd/MM/yyyy'}}</p>
+<p><b>Cliente Nome:</b> {{budgetModel.clientName}}</p>
 
-    <p>{{budgetModel.id}}#</p>
-    <p><b>Data:</b> {{budgetModel.date | date : 'dd/MM/yyyy'}}</p>
-    <p><b>Cliente Nome:</b> {{budgetModel.clientName}}</p>
-
-    <div class="form-input">
-        <div class="input-group">
-            <div class="input-label">Produto</div>
-            <select [(ngModel)]="productModel.productName">
-                @for (item of products; track $index) {
-                <option [value]="item">{{item}}</option>
-                }
-            </select>
-        </div>
-        <div class="input-group">
-            <div class="input-label inputAmount">Quantidade</div>
-            <input class="inputAmount" [(ngModel)]="productModel.amount" />
-        </div>
-        <div class="input-group">
-            <div class="input-label inputAmount">Preço unitário</div>
-            <input class="inputPrice" [(ngModel)]="productModel.price" />
-        </div>
-
-        <div class="input-group">
-            <div class="input-action">
-                @if (isEdit) {
-                <button (click)="updateItem()">Atualizar</button>
-                <button (click)="cancel()">Cancelar</button>
-                } @else {
-                <button (click)="addItem()">Incluir</button>
-                }
-            </div>
-        </div>
-
+<div class="form-input">
+    <div class="input-group">
+        <div class="input-label">Produto</div>
+        <select [(ngModel)]="productModel.productName">
+            @for (item of products; track $index) {
+            <option [value]="item">{{item}}</option>
+            }
+        </select>
+    </div>
+    <div class="input-group">
+        <div class="input-label inputAmount">Quantidade</div>
+        <input class="inputAmount" [(ngModel)]="productModel.amount" />
+    </div>
+    <div class="input-group">
+        <div class="input-label inputAmount">Preço unitário</div>
+        <input class="inputPrice" [(ngModel)]="productModel.price" />
     </div>
 
-    <div class="list">
-        <div class="list-item">
-            <div class="item desc"><b>Descrição do Produto</b></div>
-            <div class="item width-item margin-left-8"><b>Quant.</b></div>
-            <div class="item width-item margin-left-8"><b>Valor Unit.</b></div>
-            <div class="item width-item margin-left-8"><b>Sub Total</b></div>
+    <div class="input-group">
+        <div class="input-action">
+            @if (isEdit) {
+            <button (click)="updateItem()">Atualizar</button>
+            <button (click)="cancel()">Cancelar</button>
+            } @else {
+            <button (click)="addItem()">Incluir</button>
+            }
         </div>
-        @for (item of items; track $index) {
-        <div class="list-item">
-            <div class="item desc">{{item.productName}}</div>
-            <div class="item width-item margin-left-8">{{item.amount}}</div>
-            <div class="item width-item margin-left-8">{{item.price | currency : 'BRL':true }}</div>
-            <div class="item width-item margin-left-8">{{item.subPrice | currency : 'BRL':true}}</div>
-            <div class="action-group">
-                <div class="action-item" (click)="editItem($index)"><fa-icon [icon]="iEdit"></fa-icon></div>
-                <div class="action-item" (click)="removeItem($index)"><fa-icon [icon]="iRemove"></fa-icon></div>
-            </div>
-        </div>
-        } @empty {
-        <div class="list-item-empty">Lista sem itens</div>
-        }
-        <div class="list-item totalPrice">Total:{{budgetModel.totalPrice | currency : 'BRL':true}}</div>
     </div>
+
+</div>
+
+<div class="list">
+    <div class="list-item">
+        <div class="item desc"><b>Descrição do Produto</b></div>
+        <div class="item width-item margin-left-8"><b>Quant.</b></div>
+        <div class="item width-item margin-left-8"><b>Valor Unit.</b></div>
+        <div class="item width-item margin-left-8"><b>Sub Total</b></div>
+    </div>
+    @for (item of items; track $index) {
+    <div class="list-item">
+        <div class="item desc">{{item.productName}}</div>
+        <div class="item width-item margin-left-8">{{item.amount}}</div>
+        <div class="item width-item margin-left-8">{{item.price | currency : 'BRL' }}</div>
+        <div class="item width-item margin-left-8">{{item.subPrice | currency : 'BRL'}}</div>
+        <div class="action-group">
+            <div class="action-item" (click)="editItem($index)"><fa-icon [icon]="iEdit"></fa-icon></div>
+            <div class="action-item" (click)="removeItem($index)"><fa-icon [icon]="iRemove"></fa-icon></div>
+        </div>
+    </div>
+    } @empty {
+    <div class="list-item-empty">Lista sem itens</div>
+    }
+    <div class="list-item totalPrice">Total:{{budgetModel.totalPrice | currency : 'BRL'}}</div>
 </div>
